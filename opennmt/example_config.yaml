@@ -1,0 +1,59 @@
+## Where the samples will be written
+save_data: train
+
+## Where the vocab(s) will be written
+src_vocab: train/src_vocab.txt
+tgt_vocab: train/tgt_vocab.txt
+
+# Prevent overwriting existing files in the folder
+overwrite: True
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: ../../americasnlp2024/ST1_MachineTranslation/data/aymara-spanish/train.es
+        path_tgt: ../../americasnlp2024/ST1_MachineTranslation/data/aymara-spanish/train.aym
+    valid:
+        path_src: ../../americasnlp2024/ST1_MachineTranslation/data/aymara-spanish/dev.es
+        path_tgt: ../../americasnlp2024/ST1_MachineTranslation/data/aymara-spanish/dev.aym
+
+# # Uncomment for GPU training:
+# world_size: 1
+# gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: train/checkpoints
+save_checkpoint_steps: 1000
+
+# Model and Training Params
+keep_checkpoint: 1
+train_steps: 10000
+valid_steps: 1000
+report_every: 100
+
+# # Uncomment for transformer architecture:
+# decoder_type: transformer
+# encoder_type: transformer
+# word_vec_size: 256
+# hidden_size: 256
+# layers: 6
+# transformer_ff: 512
+# heads: 8
+
+# accum_count: 8
+# optim: adam
+# adam_beta1: 0.9
+# adam_beta2: 0.998
+# decay_method: noam
+# learning_rate: 2.0
+# max_grad_norm: 0.0
+
+# batch_size: 1024
+# batch_type: tokens
+# normalization: tokens
+# dropout: 0.1
+# label_smoothing: 0.1
+
+# param_init: 0.0
+# param_init_glorot: 'true'
+# position_encoding: 'true'
