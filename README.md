@@ -1,7 +1,8 @@
 # mt-hackathon-winter-2024
 Resources/tutorials for the BYU MATRIX lab Machine Translation Hackathon for Winter 2024 Semester.
 
-# tokenizer.py
+# Preprocessing
+## tokenizer.py
 
 Requirements:
 ```
@@ -37,7 +38,7 @@ sp_model_path: Path to the SentencePiece model file.
 pieces: List of SentencePieces.
 ```
 
-# tag_for_multilingual.py
+## tag_for_multilingual.py
 If you are going to be training a multilingual model, the simplest form of this is to add tags representing the target language to every source file line. The `tag_for_multilingual.py` script tags a single input file with a provided token.
 
 Remember to add any tags you use to the user_defined_symbols of your sentecepiece tokenizer when training that.
@@ -54,6 +55,11 @@ positional arguments:
 ```
 
 # opennmt/
+
+Requirements:
+```
+pip install OpenNMT-py
+```
 
 ## opennmt/example_train.sh
 This bash script is an example of the commands you use to train an OpenNMT model. This script also contains links to the OpenNMT documentation and quickstart guide. You must bulid a vocab before you train, hence there are two lines being ran.
